@@ -12,6 +12,17 @@
 		/>
 		<link rel="stylesheet" href="css/indexStyle.css" />
 		<title>ChatCord App</title>
+		<script>
+			function addRoom(e) {
+			     if(e.value=="default"){
+					var value = window.prompt("Enter room name");
+					var x = document.createElement("OPTION")
+					x.value=value;
+					x.text=value;
+					room.insertBefore(x, room.children[room.length-1]);
+				 }
+				}
+		</script>
 	</head>
 	<body>
 		<div class="join-container">
@@ -33,7 +44,7 @@
 					</div>
 					<div class="form-control">
 						<label for="room">R o o m :</label>
-						<select name="room" id="room" required>
+						<select name="room" id="room" onchange="addRoom(this)" required>
 							<option value="JavaScript" selected disabled hidden>Choose Room to Join</option>
 							<option value="JavaScript">JavaScript</option>
 							<option value="Python">Python</option>
@@ -41,6 +52,7 @@
 							<option value="C#">C#</option>
 							<option value="Ruby">Ruby</option>
 							<option value="Java">Java</option>
+							<option value="default" >Create a Room</option>
 						</select>
 					</div>
 					<button type="submit" class="btn">Join Chat</button>
