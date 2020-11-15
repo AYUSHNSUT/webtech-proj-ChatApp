@@ -1,0 +1,19 @@
+{
+  "name": "webtech-proj-chatapp",
+  "version": "1.0.0",
+  "description": "Chat app using socket and node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ayush Mishra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.14",
+    "path": "^0.12.7",
+    "socket.io": "^3.0.1"
+  }
+}
