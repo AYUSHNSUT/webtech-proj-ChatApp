@@ -33,7 +33,7 @@ const User = mongoose.model('User', userSchema);
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ChatCord Bot';
+const botName = 'COE Bot';
 
 
 function formatMessage(username, text) {
