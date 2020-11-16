@@ -8,6 +8,9 @@
   },
   "author": "Ayush Mishra",
   "license": "ISC",
+  "engines": {
+  "node": "12.6.2"
+},
   "dependencies": {
     "express": "^4.17.1",
     "http": "0.0.1-security",
