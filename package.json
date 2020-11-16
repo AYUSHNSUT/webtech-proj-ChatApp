@@ -9,7 +9,7 @@
   "author": "Ayush Mishra",
   "license": "ISC",
   "engines": {
-  "node": "12.6.2"
+  "node": "12.6"
 },
   "dependencies": {
     "express": "^4.17.1",
