@@ -89,6 +89,9 @@ io.on('connection', socket => {
       else
       {
           // console.log(formatMessage(user.username,msg));
+          if(user == undefined){
+            socket.disconnect();
+          }
           io.to(user.room).emit('message', formatMessage(user.username, msg));
       }
     })
