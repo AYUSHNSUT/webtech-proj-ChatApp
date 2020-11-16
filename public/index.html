@@ -27,7 +27,7 @@
 	<body>
 		<div class="join-container">
 			<header class="join-header">
-				<h1 class="glow"><i class="fas fa-smile"></i> <em><h2>COE <span style="font-size: 0.5em;"> - Chat Online for Engineers</span></h2></em></h1>
+				<h1 class="glow"><i class="fas fa-dice-d20"></i><em> COE :<span style="font-weight: 500; font-size: 0.5em;"> Chat Online for Engineers</span></em></h1>
 			</header>
 			<main class="join-main">
 				<form action="chat.html">
@@ -38,8 +38,9 @@
 							name="username"
 							id="username"
 							placeholder="Enter your Username ..."
-							required
 							autocomplete="off"
+							autofocus
+							required
 						/>
 					</div>
 					<div class="form-control">
@@ -52,10 +53,10 @@
 							<option value="ECE">ECE</option>
 							<option value="MECH">MECH</option>
 							<option value="ICE">ICE</option>
-							<option value="default" >Create a Room</option>
+							<option value="default" style="color: forestgreen;">&#128397; Create a Room</option>
 						</select>
 					</div>
-					<button type="submit" class="btn">Join Chat</button>
+					<button type="submit" class="btn">Join Chat <i class="fas fa-sign-in-alt"></i></button>
 				</form>
 			</main>
 		</div>
