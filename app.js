@@ -89,11 +89,12 @@ io.on('connection', socket => {
       else
       {
           // console.log(formatMessage(user.username,msg));
-          if(user == undefined){
-            socket.disconnect();
+          if(user){
+            io.to(user.room).emit('message', formatMessage(user.username, msg));
+
           }
           else{
-              io.to(user.room).emit('message', formatMessage(user.username, msg));
+            res.redirect("/")
           }
 
       }
