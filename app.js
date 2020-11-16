@@ -94,7 +94,7 @@ io.on('connection', socket => {
 
           }
           else{
-            res.redirect("/")
+            socket.disconnect()
           }
 
       }
