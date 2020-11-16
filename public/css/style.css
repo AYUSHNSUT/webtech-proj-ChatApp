@@ -58,6 +58,7 @@ a {
 
 .send-btn:focus{
 	outline: none;
+	background-color: #1567ff;
 }
 /* Chat Page */
 

@@ -2,19 +2,9 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
-let midend = 'admin-ayush:';
 const moment = require('moment');
-let mid = 'admin'
 const mongoose = require('mongoose');
-let ennd = '@cluster0.alwdd.mongodb.net/usersDB'
-
-let stawt = 'mongodb+srv://';
-
-let connectz = stawt + midend + mid + ennd;
-
-
-
-mongoose.connect(connectz, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://admin-ayush:admin@cluster0.alwdd.mongodb.net/usersDB', {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 const userSchema = new mongoose.Schema(
@@ -33,7 +23,7 @@ const User = mongoose.model('User', userSchema);
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'COE Bot';
+const botName = 'C.O.E. Bot';
 
 
 function formatMessage(username, text) {
@@ -59,7 +49,7 @@ io.on('connection', socket => {
       socket.join(user.room);
 
       // Welcome current user
-      socket.emit('message', formatMessage(botName, 'Welcome to ChatCord!'));
+      socket.emit('message', formatMessage(botName, 'Welcome to C.O.E. !!'));
 
       // Broadcast when a user connects
       socket.broadcast
