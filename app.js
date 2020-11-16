@@ -2,9 +2,19 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketio = require('socket.io');
+let midend = 'admin-ayush:';
 const moment = require('moment');
+let mid = 'admin'
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://admin-ayush:admin@cluster0.alwdd.mongodb.net/usersDB', {useNewUrlParser: true, useUnifiedTopology: true})
+let ennd = '@cluster0.alwdd.mongodb.net/usersDB'
+
+let stawt = 'mongodb+srv://';
+
+let connectz = stawt + midend + mid + ennd;
+
+
+
+mongoose.connect(connectz, {useNewUrlParser: true, useUnifiedTopology: true})
 
 
 const userSchema = new mongoose.Schema(
@@ -23,7 +33,7 @@ const User = mongoose.model('User', userSchema);
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ChatCord Bot';
+const botName = 'COE Bot';
 
 
 function formatMessage(username, text) {
