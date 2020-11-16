@@ -34,9 +34,9 @@ chatForm.addEventListener('submit', e => {
 
   // Get message text
   let msg = e.target.elements.msg.value;
-  
+
   msg = msg.trim();
-  
+
   if (!msg){
     return false;
   }
@@ -56,11 +56,11 @@ function outputMessage(message) {
   const p = document.createElement('p');
   p.classList.add('meta');
   p.innerText = message.username;
-  
+
   //DATE AND TIME
   var d = new Date();
   p.innerHTML += `<span style="float: right">${message.time} & ${d.getDate()}-${d.getMonth()+ 1}-${d.getFullYear()} </span>`;
-  
+
   div.appendChild(p);
   const para = document.createElement('p');
   para.classList.add('text');
@@ -80,6 +80,10 @@ function outputUsers(users) {
   userList.innerHTML = '';
   users.forEach(user=>{
     const li = document.createElement('li');
+
+    if(user.username.trim() == username.trim()){
+      li.classList.add("curr-user");
+    }
     // li.innerHTML = `<span><i class='fas fa-user-alt-slash'></i></span>`
     li.innerText =  user.username;
     userList.appendChild(li);
