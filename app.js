@@ -92,7 +92,10 @@ io.on('connection', socket => {
           if(user == undefined){
             socket.disconnect();
           }
-          io.to(user.room).emit('message', formatMessage(user.username, msg));
+          else{
+              io.to(user.room).emit('message', formatMessage(user.username, msg));
+          }
+
       }
     })
   });
