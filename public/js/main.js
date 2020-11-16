@@ -2,14 +2,11 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
-
+var audio = new Audio("audio.mp3")
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true
 });
-
-// console.log(username);
-// console.log(room);
 
 const socket = io();
 
@@ -37,9 +34,9 @@ chatForm.addEventListener('submit', e => {
 
   // Get message text
   let msg = e.target.elements.msg.value;
-
+  
   msg = msg.trim();
-
+  
   if (!msg){
     return false;
   }
@@ -59,13 +56,18 @@ function outputMessage(message) {
   const p = document.createElement('p');
   p.classList.add('meta');
   p.innerText = message.username;
-  p.innerHTML += `<span>${message.time}</span>`;
+  
+  //DATE AND TIME
+  var d = new Date();
+  p.innerHTML += `<span style="float: right">${message.time} & ${d.getDate()}-${d.getMonth()+ 1}-${d.getFullYear()} </span>`;
+  
   div.appendChild(p);
   const para = document.createElement('p');
   para.classList.add('text');
   para.innerText = message.text;
   div.appendChild(para);
   document.querySelector('.chat-messages').appendChild(div);
+  audio.play();
 }
 
 // Add room name to DOM
@@ -78,7 +80,9 @@ function outputUsers(users) {
   userList.innerHTML = '';
   users.forEach(user=>{
     const li = document.createElement('li');
-    li.innerText = user.username;
+    // li.innerHTML = `<span><i class='fas fa-user-alt-slash'></i></span>`
+    li.innerText =  user.username;
     userList.appendChild(li);
   });
+  audio.play();
  }
