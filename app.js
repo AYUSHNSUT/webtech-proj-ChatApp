@@ -37,7 +37,6 @@ function formatMessage(username, text) {
 // Run when client connects
 io.on('connection', socket => {
 
-
   socket.on('joinRoom', ({ username, room }) => {
     const newUser = new User({
       id : socket.id,
@@ -89,8 +88,15 @@ io.on('connection', socket => {
       }
       else
       {
-          console.log(formatMessage(user.username,msg));
-          io.to(user.room).emit('message', formatMessage(user.username, msg));
+          // console.log(formatMessage(user.username,msg));
+          if(user){
+            io.to(user.room).emit('message', formatMessage(user.username, msg));
+
+          }
+          else{
+            socket.disconnect()
+          }
+
       }
     })
   });

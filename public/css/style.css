@@ -28,6 +28,10 @@ a {
 	text-decoration: none;
 }
 
+.curr-user{
+	color: #00eb00;
+}
+
 .leave-room {
 	cursor: pointer;
 	padding: 5px 15px;
@@ -236,12 +240,12 @@ input[type='text']:focus{
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
   }
-  
+
   @-webkit-keyframes glow {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #d13737, 0 0 40px #d13737;
     }
-    
+
     to {
       text-shadow: 0 0 20px #fff, 0 0 30px #00eb00, 0 0 40px #00eb00, 0 0 50px #00eb00;
     }
