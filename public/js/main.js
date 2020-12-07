@@ -58,8 +58,20 @@ function outputMessage(message) {
   p.innerText = message.username;
 
   //DATE AND TIME
+  function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+  
   var d = new Date();
-  p.innerHTML += `<span style="float: right">${message.time} & ${d.getDate()}-${d.getMonth()+ 1}-${d.getFullYear()} </span>`;
+
+  p.innerHTML += `<span style="float: right">${formatAMPM(new Date)} & ${d.getDate()}-${d.getMonth()+ 1}-${d.getFullYear()} </span>`;
 
   div.appendChild(p);
   const para = document.createElement('p');
